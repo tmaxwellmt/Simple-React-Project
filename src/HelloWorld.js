@@ -1,10 +1,25 @@
 import React from 'react';
 
+//stateless component - display only
+function ListItem(props) {
+  return (
+    <li> {props.name}</li>
+  )
+}
+//stateful component
 var HelloWorld = React.createClass({
-  render: function() {
+  makeList: function () {
+    var nameList = this.props.names.map(function (item) {
+      return (<ListItem name={item} />);
+    });
+    return nameList;
+  },
+  render: function () {
     return (
       <div>
-        <h1>Hello, world!</h1>
+        <ul>
+          {this.makeList()}
+        </ul>
       </div>
     )
   }
