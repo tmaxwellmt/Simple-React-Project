@@ -9,7 +9,7 @@ function ListItem(props) {
 //stateful component
 var HelloWorld = React.createClass({
   makeList: function () {
-    var nameList = this.props.names.map(function (item) {
+    var nameList = this.props.anyThingWeWant.map(function (item) {
       return (<ListItem name={item} />);
     });
     return nameList;
